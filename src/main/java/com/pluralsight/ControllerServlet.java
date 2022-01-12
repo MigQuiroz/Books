@@ -1,5 +1,6 @@
  package com.pluralsight;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,13 +29,17 @@ public class ControllerServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		PrintWriter output = response.getWriter();
+		/*PrintWriter output = response.getWriter();
 		
 		String title = request.getParameter("title");
 		String author = request.getParameter("author");
 		
 		output.println("Book Title: " + title);
-		output.println("Author: " + author);
+		output.println("Author: " + author);*/
+		
+		request.setAttribute("book_title", "1984");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/BookList.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**

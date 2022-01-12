@@ -8,7 +8,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ControllerServlet</servlet-name>
-    <url-pattern>/ControllerServlet</url-pattern>
+    <url-pattern>/books/</url-pattern>
   </servlet-mapping>
   <display-name>BookStore</display-name>
   <welcome-file-list>

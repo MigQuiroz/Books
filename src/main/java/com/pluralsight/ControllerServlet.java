@@ -17,6 +17,7 @@ public class ControllerServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	/* @WebServlet("/books/*")*/  
     public ControllerServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -28,9 +29,12 @@ public class ControllerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PrintWriter output = response.getWriter();
+		
 		String title = request.getParameter("title");
+		String author = request.getParameter("author");
 		
 		output.println("Book Title: " + title);
+		output.println("Author: " + author);
 	}
 
 	/**
